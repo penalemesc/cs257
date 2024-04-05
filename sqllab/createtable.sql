@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS earthquakes;
 CREATE TABLE earthquakes (
-  quaketime time with time zone PRIMARY KEY,
-  latitude real PRIMARY KEY,
-  longitude real PRIMARY KEY,
+  quaketime time with time zone,
+  latitude real,
+  longitude real,
   quakedepth real,
   mag real,
   magType text,
