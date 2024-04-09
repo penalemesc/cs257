@@ -1,10 +1,10 @@
 --Find all earthquakes that happened in Argentina
 SELECT * 
   FROM earthquakes e 
-  WHERE e.place = '%Argentina';
+  WHERE e.place = '%Argentina%';
 
 --find the magnitude of any earthquake that happened at an latitude of at least 20
-SELECT mag 
+SELECT AVG(mag) 
   FROM earthquakes e 
   WHERE e.latitude >= 20;
 
