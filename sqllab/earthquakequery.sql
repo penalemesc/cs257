@@ -1,8 +1,7 @@
---Find all earthquakes that happened between april 6th and may 2nd of any year
+--Find all earthquakes that happened in Argentina
 SELECT * 
   FROM earthquakes e 
-  WHERE e.quaketime 
-  BETWEEN %04-06% AND %05-02%;
+  WHERE e.place = '%Argentina';
 
 --find the magnitude of any earthquake that happened at an latitude of at least 20
 SELECT mag 
