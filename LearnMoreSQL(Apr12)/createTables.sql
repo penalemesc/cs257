@@ -11,7 +11,7 @@
 
    CREATE TABLE USCitiesTop1k (
           city varchar(75) NOT NULL,
-          stateName varchar(25) NOT NULL REFERENCES USStatesPop,
+          stateName varchar(25) NOT NULL,
           cityPop int NOT NULL,
           lat real NOT NULL,
           lot real NOT NULL,
