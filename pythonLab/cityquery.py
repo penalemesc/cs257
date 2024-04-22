@@ -84,7 +84,7 @@ def query4():
 
 	cur = conn.cursor()
 
-	sql = """ DROP VIEW if EXISTS furthestWest;
+	createViewsSql = """ DROP VIEW if EXISTS furthestWest;
 
 DROP VIEW if EXISTS furthestEast;
 
@@ -109,30 +109,33 @@ DROP VIEW if EXISTS furthestSouth;
    CREATE VIEW furthestWest AS (
    SELECT max(lot) AS FWest
      FROM USCitiesTop1k
-);
-
-   SELECT UCT.city AS furthestWest
-     FROM USCitiesTop1k UCT,
-          furthestWest FW
-    WHERE UCT.lot = Fw.Fwest;
-
-   SELECT UCT.city AS furthestEast
-     FROM USCitiesTop1k UCT,
-          furthestEast FE
-    WHERE UCT.lot = FE.FEast;
-
-	SELECT UCT.city AS furthestNorth
+);"""
+	northSQL = """SELECT UCT.city AS furthestNorth
      FROM USCitiesTop1k UCT,
           furthestNorth FN
-    WHERE UCT.lat = FN.FNorth;
-
-	SELECT UCT.city AS furthestSouth
+    WHERE UCT.lat = FN.FNorth;"""
+	southSQL = """SELECT UCT.city AS furthestSouth
      FROM USCitiesTop1k UCT,
           furthestSouth FS
     WHERE UCT.lat = FS.FSouth;"""
-
-	cur.execute(sql)
-	cur.fetchall()
+	eastSQL = """SELECT UCT.city AS furthestEast
+     FROM USCitiesTop1k UCT,
+          furthestEast FE
+    WHERE UCT.lot = FE.FEast;"""
+	westSQL = """SELECT UCT.city AS furthestWest
+     FROM USCitiesTop1k UCT,
+          furthestWest FW
+    WHERE UCT.lot = Fw.Fwest;"""
+	cur.execute(createViewsSql)
+	cur.execute(northSQL)
+	north = cur.fetchall()
+	cur.execute(southSQL)
+	south = cur.fetchall()
+	cur.execute(eastSQL) 
+	east = cur.fetchall()
+	cur.execute(westSQL)
+	west = cur.fetchall()
+	return north, south, east, west
 
 def query5():
 	conn = psycopg2.connect(
@@ -148,11 +151,12 @@ def query5():
 	if input1.count == 2:
 		sql = "select stateName, staPop from USStatesPop where code = %s"
 		cur.execute(sql, [input1.capitalize])
-		cur.fetchall()
+		return cur.fetchall()
+		
 	else:
 		sql = "select staPop from USStatesPop where stateName = %s"
 		cur.execute(sql, [input1])
-		cur.fetchall()
+		return cur.fetchall()
 		
 
 	
