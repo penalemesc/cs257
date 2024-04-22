@@ -72,8 +72,6 @@ def query3():
 	rowList = cur.fetchall()
 	return rowList
 
-#query 4 does not return anything, the reason for this I am unsure of as the sql statement does work
-#perhaps it would work if I had a way to make python run an sql file instead of having the entire query in python
 def query4():
 	conn = psycopg2.connect(
         host="localhost",
