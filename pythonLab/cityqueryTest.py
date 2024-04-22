@@ -31,8 +31,6 @@ def testQueryNum1():
 
 	row = cur.execute (sql)
 
-	##row = cur.fetchall()
-
 	if row is None:
 		print("Sorry northfield is not on the Database.")
             

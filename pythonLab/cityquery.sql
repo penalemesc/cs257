@@ -1,5 +1,5 @@
 --1 Determine if Northfield is present in the database. If it is, print its location (Latitude and Longitude). If it is not, print an appropriate message for the user.
-select lot, lat from USCitiesTop1k where city = 'Northfield';
+select lot, lat from USCitiesTop1k where city = 'N%';
 --2 Print out the name of the city with the largest population.
      WITH maxCityPop AS (
              SELECT max(cityPop) AS MaxCP

@@ -2,7 +2,7 @@ import flask
 
 app = flask.Flask(__name__)
 
-#
+#app.route es lo que se deberia ejecutar de la pagina web
 @app.route('/hello')
 def my_function():
     return "Hello World!"

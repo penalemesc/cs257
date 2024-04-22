@@ -156,11 +156,6 @@ def query5():
 		cur.execute(sql, [input1])
 		return cur.fetchall()
 		
-
-	
-
-	
-
 print (query1())
 print (query2())
 print (query3())
