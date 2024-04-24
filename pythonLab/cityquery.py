@@ -146,14 +146,16 @@ def query5():
 	cur = conn.cursor()
 	print("Hi please write a State or state abbreviation to look for in the database")
 	input1 = input()
-	if input1.count == 2:
+	if len(input1) == 2:
+		
 		sql = "select stateName, staPop from USStatesPop where code = %s"
-		cur.execute(sql, [input1.capitalize])
+		cur.execute(sql, [input1.upper()])
+		
 		return cur.fetchall()
 		
 	else:
 		sql = "select staPop from USStatesPop where stateName = %s"
-		cur.execute(sql, [input1])
+		cur.execute(sql, [input1.capitalize()])
 		return cur.fetchall()
 		
 print (query1())
