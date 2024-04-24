@@ -149,10 +149,11 @@ def query5():
 	if len(input1) == 2:
 		
 		sql = "select stateName, staPop from USStatesPop where code = %s"
+		#upper hace lo que toUpperCase hace en java, ergo, pone todo en mayuscula
 		cur.execute(sql, [input1.upper()])
 		
 		return cur.fetchall()
-		
+	#capitalize hace que la primera letra sea en mayuscula pero no el resto	
 	else:
 		sql = "select staPop from USStatesPop where stateName = %s"
 		cur.execute(sql, [input1.capitalize()])
