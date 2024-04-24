@@ -23,6 +23,8 @@ def my_display(word1, word2):
 def my_color(word1):
     return '<h1 style="color:Red">' + word1 + '</h1>'
 
+#Here start the queries created by Conrado Peña Lemes
+#Esto devuelve la suma de 2 numeros que pasamos por la ruta
 @app.route('/add/<num1>/<num2Str>')
 def addTwoNums(num1, num2):
     num1 = int(num1)
@@ -31,6 +33,7 @@ def addTwoNums(num1, num2):
     added = str(added)
     return added
 
+#Esto devuelve la poblacion de un estado que le pasamos por la ruta 
 @app.route('/pop/<abbrev>')
 def populationCount(abbrev):
     
@@ -46,7 +49,6 @@ def populationCount(abbrev):
     cur.execute(sql, [abbrev.upper()])
     return cur.fetchall()
     
-
 if __name__ == '__main__':
     my_port = 5104
     app.run(host='0.0.0.0', port = my_port) 
