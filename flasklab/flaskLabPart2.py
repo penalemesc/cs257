@@ -27,7 +27,8 @@ def randomS():
     cur.execute(sql, [num])
     #The only caveat that I have with this is that I am not aware of how to fetch the data and not the () that come
     #with the fetchone function, but everything else works
-    return render_template("flaskLabPT2Random.html", randFood = cur.fetchone(), randYear = rYear)
+    gh = cur.fetchone()
+    return render_template("flaskLabPT2Random.html", randFood = gh[0], randYear = rYear)
 
 if __name__ == '__main__':
     my_port = 5104
