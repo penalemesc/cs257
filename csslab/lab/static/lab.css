@@ -1,0 +1,17 @@
+.clase {
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+.claseSombra {
+  color: white;
+  display: inline-block;
+  background-color: black;
+  text-shadow: 5px 5px 5px blue;
+}
+
+.claseColor{
+  color: rgb(24, 185, 177);
+  background-color: rgb(128, 11, 50);
+}
