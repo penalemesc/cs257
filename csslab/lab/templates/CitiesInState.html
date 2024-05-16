@@ -1,0 +1,21 @@
+<head>
+  <link rel="stylesheet" href="/static/lab.css">
+
+  <script src="/static/lab.js"></script>
+</head>
+
+<h1 class="claseSombra" id="mouseOverPara" href="/">
+  Hello, this page is meant to give you all the cities in a state if you write the code of said state!
+</h1>
+<p id="mouseOverPara" class="claseColor">
+Also! If you mouse over this text it will change colours!
+</p>
+
+<form method="post">
+  <input type="text" name="stateCode">
+  <input type="submit" value="Get Cities!">
+</form>
+
+<p>The state selected was: {{state}}</p>
+<p>And here are all cities in it!</p>
+<p>{{cities}}</p>

@@ -11,7 +11,7 @@
   text-shadow: 5px 5px 5px blue;
 }
 
-.claseColor{
+.claseColor:hover{
   color: rgb(24, 185, 177);
   background-color: rgb(128, 11, 50);
 }

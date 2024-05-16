@@ -1,0 +1,42 @@
+<head>
+  <link rel="stylesheet" href="/static/example.css">
+
+  <script src="/static/example.js"></script>
+</head>
+
+<h1 class="my-class" id="hello">
+  Hello Friend!
+</h1>
+
+<p class ="center-para">
+  Select a name here:
+<select id="last_name" onchange="updateName()">
+
+  {{DropdownOptions|safe}}
+  
+</select>
+</p>
+
+<p class="center-para">
+  You selected this name from the Drop Down: <b id="bold_name"> Unknown </b>
+</p>
+
+<hr>
+
+<p class="center-para">
+  Below you can enter a First Name followed by a Last Name and have it added to the Dropdown
+</p>
+
+<p class="center-para">
+  First: <input id="first_input">
+  &nbsp &nbsp &nbsp &nbsp &nbsp
+  Last: <input id="last_input">
+
+  <br>
+  <br>
+  <br>
+  
+<button class="big-button" onclick="addDropdownItem()">
+   Add Name to Dropdown
+</button>
+</p>
