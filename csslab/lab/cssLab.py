@@ -3,9 +3,7 @@ from flask import render_template
 from flask import request
 import psycopg2
 
-
 app = Flask(__name__)
-
 
 @app.route('/',methods=['GET', 'POST'])
 def citiesInState():
@@ -24,7 +22,6 @@ def citiesInState():
         ciudad = cur.fetchall()
         #If writing a state that doesnt exist, it will return what we wrote and an empty array
         return render_template("CitiesInState.html", cities = ciudad, state = staCode)
-    
     else:
         return render_template("CitiesInState.html")
     
